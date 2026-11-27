@@ -18,3 +18,6 @@ Wasm.lock
 # Símbolos de debug do cook Wasm (~69 MB). Não são necessários para jogar.
 Wasm-Debug/
 *.js.symbols
+
+# Módulo inteiro (~209 MB). O GitHub recusa o arquivo; o Pages usa as partes.
+Wasm/UE_Web_Test/Binaries/Wasm/UE_Web_Test.wasm

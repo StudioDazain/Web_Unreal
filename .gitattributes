@@ -3,13 +3,9 @@
 *.cmd text eol=crlf
 *.ps1 text eol=crlf
 
-# GitHub recusa arquivos acima de 100 MB. O .wasm deste build passa de 200 MB,
-# e os contêineres de conteúdo crescem a cada cook.
-*.wasm filter=lfs diff=lfs merge=lfs -text
-*.pak filter=lfs diff=lfs merge=lfs -text
-*.ucas filter=lfs diff=lfs merge=lfs -text
-*.utoc filter=lfs diff=lfs merge=lfs -text
-
+# O módulo inteiro passa de 100 MB, então o Pages recebe as partes em
+# Wasm/UE_Web_Test/Binaries/Wasm/parts/ (o service worker junta os bytes).
+# Paks ficam no Git normal: o Pages não entrega arquivos do Git LFS.
 *.br binary
 *.bin binary
 *.ushaderbytecode binary

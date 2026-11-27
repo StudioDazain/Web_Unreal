@@ -42,18 +42,11 @@ Para servir manualmente:
 python serve.py --root Wasm --port 8973 --open index.html
 ```
 
-## Publicar no GitHub
+## Jogar no GitHub Pages
 
-O repositório precisa existir vazio (sem README e sem `.gitignore` gerados pelo site). Git LFS tem que estar ativo na conta.
+O site publicado fica em `https://studiodazain.github.io/Web_Unreal/`. A primeira visita recarrega a página uma vez: o service worker passa a enviar os headers de isolamento que as threads do Wasm exigem, porque o Pages não deixa configurar esses headers no servidor.
 
-```bash
-git remote add origin https://github.com/USUARIO/REPOSITORIO.git
-git push -u origin main
-```
-
-O plano gratuito do GitHub inclui uma cota de armazenamento e de banda do Git LFS. Este build coloca cerca de 260 MB nessa cota (o `.wasm` e os paks).
-
-GitHub Pages não serve este jogo: Pages não entrega o conteúdo do Git LFS e não envia os headers `Cross-Origin-Opener-Policy` e `Cross-Origin-Embedder-Policy` que o build precisa. Use o servidor local, ou um host que aceite arquivo grande e o arquivo `Wasm/_headers`.
+O módulo de 209 MB está dividido em cinco partes em `Wasm/UE_Web_Test/Binaries/Wasm/parts/`. O service worker junta essas partes antes de compilar o jogo. O arquivo inteiro não entra no Git.
 
 ## O que fica de fora
 
