@@ -6,6 +6,9 @@
 # O módulo inteiro passa de 100 MB, então o Pages recebe as partes em
 # Wasm/UE_Web_Test/Binaries/Wasm/parts/ (o service worker junta os bytes).
 # Paks ficam no Git normal: o Pages não entrega arquivos do Git LFS.
+# O script do jogo entra no wasm-cache.json pelo sha1. Quebra de linha não pode mudar.
+Wasm/UE_Web_Test/Binaries/Wasm/*.js binary
+
 *.br binary
 *.bin binary
 *.ushaderbytecode binary
