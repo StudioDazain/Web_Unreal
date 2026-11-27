@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs do servidor local
+*.log
+
+# Trava vazia gerada no empacotamento
+Wasm.lock
+
+# Símbolos de debug do cook Wasm (~69 MB). Não são necessários para jogar.
+Wasm-Debug/
+*.js.symbols
